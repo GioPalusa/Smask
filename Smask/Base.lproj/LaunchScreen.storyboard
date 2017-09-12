@@ -31,6 +31,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LADDAR..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8T-7G-YCp">
+                                <rect key="frame" x="147" y="571" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -40,7 +46,9 @@
                             <constraint firstItem="Qny-Uf-UnM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-22" id="Jat-Ha-VZA"/>
                             <constraint firstItem="fl5-ok-oip" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="OxX-xL-Pxl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qny-Uf-UnM" secondAttribute="trailing" constant="16" id="S0K-Op-uWG"/>
+                            <constraint firstItem="w8T-7G-YCp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dEI-MZ-tuE"/>
                             <constraint firstItem="fl5-ok-oip" firstAttribute="top" secondItem="Qny-Uf-UnM" secondAttribute="bottom" constant="7" id="i1F-c8-Ybo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w8T-7G-YCp" secondAttribute="bottom" constant="75" id="uDf-Ei-GSb"/>
                             <constraint firstItem="Qny-Uf-UnM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vGP-Pf-dg3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

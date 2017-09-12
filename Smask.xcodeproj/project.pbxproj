@@ -8,33 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		7B079DD88F6E09148659A706 /* Pods_Smask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326A4A89799DF2F502A33673 /* Pods_Smask.framework */; };
+		AC28AFC51F67264D0014066B /* recepieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28AFC41F67264D0014066B /* recepieVC.swift */; };
+		AC5ED3CF1F67F98500996293 /* Recepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3CE1F67F98500996293 /* Recepie.swift */; };
+		AC5ED3D61F68140B00996293 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3D51F68140B00996293 /* Constants.swift */; };
 		ACAD77221F65990B00DF4B7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */; };
 		ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */; };
-		ACC25F311F62D1D90088CF12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F301F62D1D90088CF12 /* ViewController.swift */; };
+		ACC25F311F62D1D90088CF12 /* RecepieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F301F62D1D90088CF12 /* RecepieListVC.swift */; };
 		ACC25F341F62D1D90088CF12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC25F321F62D1D90088CF12 /* Main.storyboard */; };
 		ACC25F361F62D1D90088CF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC25F351F62D1D90088CF12 /* Assets.xcassets */; };
 		ACC25F391F62D1D90088CF12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC25F371F62D1D90088CF12 /* LaunchScreen.storyboard */; };
 		ACD148EB1F642E1F007265F2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD148EA1F642E1F007265F2 /* GradientView.swift */; };
 		ACD148EE1F642F0C007265F2 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD148ED1F642F0C007265F2 /* MenuVC.swift */; };
-		ACD148F31F6436C8007265F2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD148F21F64349B007265F2 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		326A4A89799DF2F502A33673 /* Pods_Smask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA2E03EAF296F095157EED /* Pods-Smask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smask/Pods-Smask.debug.xcconfig"; sourceTree = "<group>"; };
+		AC28AFC41F67264D0014066B /* recepieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recepieVC.swift; sourceTree = "<group>"; };
+		AC5ED3CE1F67F98500996293 /* Recepie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recepie.swift; sourceTree = "<group>"; };
+		AC5ED3D01F680B6C00996293 /* Smask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smask-Bridging-Header.h"; sourceTree = "<group>"; };
+		AC5ED3D11F680B6C00996293 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AC5ED3D21F680B6C00996293 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		AC5ED3D51F68140B00996293 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ACC25F2B1F62D1D90088CF12 /* Smask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACC25F301F62D1D90088CF12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACC25F301F62D1D90088CF12 /* RecepieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieListVC.swift; sourceTree = "<group>"; };
 		ACC25F331F62D1D90088CF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACC25F351F62D1D90088CF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC25F381F62D1D90088CF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACC25F3A1F62D1D90088CF12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACD148EA1F642E1F007265F2 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		ACD148ED1F642F0C007265F2 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
-		ACD148F01F64349A007265F2 /* Smask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smask-Bridging-Header.h"; sourceTree = "<group>"; };
-		ACD148F11F64349B007265F2 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		ACD148F21F64349B007265F2 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		BDF30456176C577F37BC796C /* Pods-Smask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smask.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smask/Pods-Smask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +72,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC2B71271F66A84C00538EB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC5ED3CE1F67F98500996293 /* Recepie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC5ED3D41F6813FF00996293 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AC5ED3D51F68140B00996293 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		ACC25F221F62D1D90088CF12 = {
 			isa = PBXGroup;
 			children = (
@@ -88,11 +109,12 @@
 		ACC25F2D1F62D1D90088CF12 /* Smask */ = {
 			isa = PBXGroup;
 			children = (
+				AC5ED3D41F6813FF00996293 /* Utilities */,
+				AC2B71271F66A84C00538EB3 /* Model */,
 				ACD148E81F6426C2007265F2 /* View */,
 				ACD148EC1F642EF5007265F2 /* Controller */,
 				ACD148EF1F643485007265F2 /* Supporting files */,
 				ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */,
-				ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */,
 				ACC25F321F62D1D90088CF12 /* Main.storyboard */,
 				ACC25F351F62D1D90088CF12 /* Assets.xcassets */,
 				ACC25F371F62D1D90088CF12 /* LaunchScreen.storyboard */,
@@ -112,8 +134,9 @@
 		ACD148EC1F642EF5007265F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ACC25F301F62D1D90088CF12 /* ViewController.swift */,
+				ACC25F301F62D1D90088CF12 /* RecepieListVC.swift */,
 				ACD148ED1F642F0C007265F2 /* MenuVC.swift */,
+				AC28AFC41F67264D0014066B /* recepieVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,9 +144,10 @@
 		ACD148EF1F643485007265F2 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				ACD148F11F64349B007265F2 /* SWRevealViewController.h */,
-				ACD148F21F64349B007265F2 /* SWRevealViewController.m */,
-				ACD148F01F64349A007265F2 /* Smask-Bridging-Header.h */,
+				ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */,
+				AC5ED3D01F680B6C00996293 /* Smask-Bridging-Header.h */,
+				AC5ED3D21F680B6C00996293 /* SWRevealViewController.h */,
+				AC5ED3D11F680B6C00996293 /* SWRevealViewController.m */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -253,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC25F311F62D1D90088CF12 /* ViewController.swift in Sources */,
+				ACC25F311F62D1D90088CF12 /* RecepieListVC.swift in Sources */,
+				AC5ED3CF1F67F98500996293 /* Recepie.swift in Sources */,
 				ACD148EE1F642F0C007265F2 /* MenuVC.swift in Sources */,
-				ACD148F31F6436C8007265F2 /* SWRevealViewController.m in Sources */,
 				ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */,
+				AC5ED3D61F68140B00996293 /* Constants.swift in Sources */,
+				AC28AFC51F67264D0014066B /* recepieVC.swift in Sources */,
 				ACD148EB1F642E1F007265F2 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
