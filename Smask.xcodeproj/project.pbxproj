@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7B079DD88F6E09148659A706 /* Pods_Smask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326A4A89799DF2F502A33673 /* Pods_Smask.framework */; };
+		AC12954B1F6957280062F1FF /* MainPageRecepieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12954A1F6957280062F1FF /* MainPageRecepieCell.swift */; };
+		AC12954E1F6971AB0062F1FF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12954D1F6971AB0062F1FF /* DataService.swift */; };
 		AC28AFC51F67264D0014066B /* recepieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28AFC41F67264D0014066B /* recepieVC.swift */; };
-		AC5ED3CF1F67F98500996293 /* Recepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3CE1F67F98500996293 /* Recepie.swift */; };
+		AC5ED3CF1F67F98500996293 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3CE1F67F98500996293 /* Recipe.swift */; };
 		AC5ED3D61F68140B00996293 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3D51F68140B00996293 /* Constants.swift */; };
 		ACAD77221F65990B00DF4B7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */; };
 		ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */; };
-		ACC25F311F62D1D90088CF12 /* RecepieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F301F62D1D90088CF12 /* RecepieListVC.swift */; };
+		ACC25F311F62D1D90088CF12 /* RecipeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F301F62D1D90088CF12 /* RecipeListVC.swift */; };
 		ACC25F341F62D1D90088CF12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC25F321F62D1D90088CF12 /* Main.storyboard */; };
 		ACC25F361F62D1D90088CF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC25F351F62D1D90088CF12 /* Assets.xcassets */; };
 		ACC25F391F62D1D90088CF12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC25F371F62D1D90088CF12 /* LaunchScreen.storyboard */; };
@@ -24,8 +26,10 @@
 /* Begin PBXFileReference section */
 		326A4A89799DF2F502A33673 /* Pods_Smask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA2E03EAF296F095157EED /* Pods-Smask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smask/Pods-Smask.debug.xcconfig"; sourceTree = "<group>"; };
+		AC12954A1F6957280062F1FF /* MainPageRecepieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageRecepieCell.swift; sourceTree = "<group>"; };
+		AC12954D1F6971AB0062F1FF /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		AC28AFC41F67264D0014066B /* recepieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recepieVC.swift; sourceTree = "<group>"; };
-		AC5ED3CE1F67F98500996293 /* Recepie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recepie.swift; sourceTree = "<group>"; };
+		AC5ED3CE1F67F98500996293 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		AC5ED3D01F680B6C00996293 /* Smask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smask-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC5ED3D11F680B6C00996293 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		AC5ED3D21F680B6C00996293 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -33,7 +37,7 @@
 		ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ACC25F2B1F62D1D90088CF12 /* Smask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACC25F301F62D1D90088CF12 /* RecepieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieListVC.swift; sourceTree = "<group>"; };
+		ACC25F301F62D1D90088CF12 /* RecipeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListVC.swift; sourceTree = "<group>"; };
 		ACC25F331F62D1D90088CF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACC25F351F62D1D90088CF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC25F381F62D1D90088CF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,10 +76,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC12954C1F6971810062F1FF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC12954D1F6971AB0062F1FF /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AC2B71271F66A84C00538EB3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC5ED3CE1F67F98500996293 /* Recepie.swift */,
+				AC5ED3CE1F67F98500996293 /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +121,7 @@
 		ACC25F2D1F62D1D90088CF12 /* Smask */ = {
 			isa = PBXGroup;
 			children = (
+				AC12954C1F6971810062F1FF /* Services */,
 				AC5ED3D41F6813FF00996293 /* Utilities */,
 				AC2B71271F66A84C00538EB3 /* Model */,
 				ACD148E81F6426C2007265F2 /* View */,
@@ -127,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				ACD148EA1F642E1F007265F2 /* GradientView.swift */,
+				AC12954A1F6957280062F1FF /* MainPageRecepieCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,7 +148,7 @@
 		ACD148EC1F642EF5007265F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ACC25F301F62D1D90088CF12 /* RecepieListVC.swift */,
+				ACC25F301F62D1D90088CF12 /* RecipeListVC.swift */,
 				ACD148ED1F642F0C007265F2 /* MenuVC.swift */,
 				AC28AFC41F67264D0014066B /* recepieVC.swift */,
 			);
@@ -277,9 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC25F311F62D1D90088CF12 /* RecepieListVC.swift in Sources */,
-				AC5ED3CF1F67F98500996293 /* Recepie.swift in Sources */,
+				AC12954E1F6971AB0062F1FF /* DataService.swift in Sources */,
+				ACC25F311F62D1D90088CF12 /* RecipeListVC.swift in Sources */,
+				AC5ED3CF1F67F98500996293 /* Recipe.swift in Sources */,
 				ACD148EE1F642F0C007265F2 /* MenuVC.swift in Sources */,
+				AC12954B1F6957280062F1FF /* MainPageRecepieCell.swift in Sources */,
 				ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */,
 				AC5ED3D61F68140B00996293 /* Constants.swift in Sources */,
 				AC28AFC51F67264D0014066B /* recepieVC.swift in Sources */,
