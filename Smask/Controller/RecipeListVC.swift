@@ -18,12 +18,13 @@ class RecipeListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var recipesArray = [Recipe]()
+    var refreshControl: UIRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Store a local copy of FB DB on the unit
-        Database.database().isPersistenceEnabled = true
+        // Store a local copy of FIR DB on the unit
+        Database.database().isPersistenceEnabled = false
         
         // Open up the sidebar menu using revealViewController
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
@@ -35,6 +36,16 @@ class RecipeListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        // Check if later than iOS 10 for using the correct refresh control
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        // Add refreshcontrol to this view controller and run a refresh of the table view,
+        // fetching new data from Smask on Firebase, then listen for a value change
+        refreshControl.addTarget(self, action: #selector(RecipeListVC.refreshTableView), for: UIControlEvents.valueChanged)
     }
     
     // Before the view appears get, and reload the data
@@ -43,6 +54,15 @@ class RecipeListVC: UIViewController {
         DataService.instance.getDatafromFIR { (returnedRecipesArray) in
             self.recipesArray = returnedRecipesArray
             self.tableView.reloadData()
+        }
+    }
+    
+    // Same as viewDidAppear, but telling the refresh control to stop after finished
+    @objc func refreshTableView() {
+        DataService.instance.getDatafromFIR { (returnedRecipesArray) in
+            self.recipesArray = returnedRecipesArray
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
 }
@@ -54,17 +74,27 @@ extension RecipeListVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    // Rerturn as many rows as there are recepies in the array
+    // Rerturn as many rows as there are recipes in the array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipesArray.count
     }
     
-    // 
+    // populate the table view cells with info from the array of recipes
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "recepieCellMain") as? MainPageRecepieCell else { return UITableViewCell() }
-        let recepie = recipesArray[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "recepieCellMain") as? MainPageRecipeCell else { return UITableViewCell() }
+        let recipe = recipesArray[indexPath.row]
         
-        cell.setCell(title: recepie.title, time: recepie.time, categoryImg: recepie.icon)
+        cell.setCell(title: recipe.title, time: "\(recipe.time) minuter", categoryImg: recipe.icon)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "viewRecepie", sender: recipesArray[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let clicked = segue.destination as! RecipeVC
+        
+        clicked.chosenRecipe = sender as? Recipe
     }
 }

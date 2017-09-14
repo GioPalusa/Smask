@@ -13,7 +13,6 @@ class MenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.menuVC().rearViewRevealWidth = self.view.frame.size.width - 60
     }
 
     

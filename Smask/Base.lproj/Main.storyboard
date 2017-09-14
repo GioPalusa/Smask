@@ -70,7 +70,7 @@
                                         </constraints>
                                         <state key="normal" image="add"/>
                                         <connections>
-                                            <segue destination="hqs-8H-d3B" kind="show" identifier="presentRecepie" id="Uax-pF-VCh"/>
+                                            <segue destination="EiP-Gw-5js" kind="show" identifier="createNewRecipe" id="dNG-FT-WoM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="85" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recepieCellMain" rowHeight="38" id="Rd7-pD-uUa" customClass="MainPageRecepieCell" customModule="Smask" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recepieCellMain" rowHeight="38" id="Rd7-pD-uUa" customClass="MainPageRecipeCell" customModule="Smask" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rd7-pD-uUa" id="oMS-5U-N21">
@@ -121,7 +121,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="Sf6-Yn-Lel">
-                                                    <rect key="frame" x="291" y="8.5" width="21" height="21"/>
+                                                    <rect key="frame" x="294" y="8.5" width="21" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="21" id="N6J-S6-yaG"/>
                                                         <constraint firstAttribute="height" constant="21" id="oZX-9s-Ipq"/>
@@ -134,7 +134,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="MyL-AU-bog" secondAttribute="trailing" constant="8" id="9BH-Mh-IEL"/>
                                                 <constraint firstItem="Er2-Vs-oPZ" firstAttribute="centerY" secondItem="J13-gb-eIo" secondAttribute="centerY" id="BSG-Lv-vHh"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Er2-Vs-oPZ" secondAttribute="trailing" constant="20" symbolic="YES" id="BaY-en-OSL"/>
-                                                <constraint firstItem="MyL-AU-bog" firstAttribute="leading" secondItem="Sf6-Yn-Lel" secondAttribute="trailing" constant="10" id="KDf-9a-hNI"/>
+                                                <constraint firstItem="MyL-AU-bog" firstAttribute="leading" secondItem="Sf6-Yn-Lel" secondAttribute="trailing" constant="7" id="KDf-9a-hNI"/>
                                                 <constraint firstItem="J13-gb-eIo" firstAttribute="leading" secondItem="oMS-5U-N21" secondAttribute="leading" constant="8" id="S01-2L-7KL"/>
                                                 <constraint firstItem="Sf6-Yn-Lel" firstAttribute="centerY" secondItem="MyL-AU-bog" secondAttribute="centerY" id="er4-2d-1Lz"/>
                                                 <constraint firstItem="Er2-Vs-oPZ" firstAttribute="leading" secondItem="J13-gb-eIo" secondAttribute="trailing" constant="8" id="iRV-WT-K2y"/>
@@ -147,6 +147,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="g2P-cr-UfY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -164,17 +167,17 @@
                     <connections>
                         <outlet property="menuBtn" destination="ysT-Nf-r5B" id="NIA-qm-je3"/>
                         <outlet property="tableView" destination="ff9-Ak-zTO" id="LOD-T6-c33"/>
-                        <segue destination="hqs-8H-d3B" kind="showDetail" action="showViewController:sender:" id="Ozr-wx-XN2"/>
+                        <segue destination="hqs-8H-d3B" kind="show" identifier="viewRecepie" id="I2e-m3-Eha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="457" y="117"/>
         </scene>
-        <!--RecepieVC-->
+        <!--RecipeVC-->
         <scene sceneID="Yfy-Kr-8JL">
             <objects>
-                <viewController id="hqs-8H-d3B" customClass="recepieVC" customModule="Smask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hqs-8H-d3B" customClass="RecipeVC" customModule="Smask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Az2-iE-gnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,10 +333,17 @@ Smör, salt och peppar</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lgw-rA-onf"/>
                     </view>
+                    <connections>
+                        <outlet property="doThisLbl" destination="xhy-2p-stv" id="ChA-I8-Ybf"/>
+                        <outlet property="favouriteBtn" destination="KuU-w2-tvq" id="0dc-Cc-Kba"/>
+                        <outlet property="ingredientsLbl" destination="L5C-hT-Wcw" id="H8T-Hp-K4h"/>
+                        <outlet property="recepieTitleLbl" destination="aoW-rd-Da7" id="agb-rS-Gh5"/>
+                        <outlet property="timeLbl" destination="Rth-RT-oes" id="VIV-Hr-pDa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uI4-01-zKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="220.3898050974513"/>
+            <point key="canvasLocation" x="1389.5999999999999" y="467.3163418290855"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="m4R-Oy-QHV">
@@ -526,6 +536,38 @@ Smör, salt och peppar</string>
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="-582.45877061469275"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="TzC-R5-Qwf">
+            <objects>
+                <viewController id="EiP-Gw-5js" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qC5-1K-vbC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-5k-Tre">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Nytt recept" id="69y-W7-fsD">
+                                        <barButtonItem key="backBarButtonItem" title="Tillbaka" id="OJV-wU-39V"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OVd-5k-Tre" firstAttribute="leading" secondItem="hq4-iL-bp5" secondAttribute="leading" id="9Av-yC-qvo"/>
+                            <constraint firstItem="OVd-5k-Tre" firstAttribute="top" secondItem="hq4-iL-bp5" secondAttribute="top" id="9Vm-fk-FTJ"/>
+                            <constraint firstItem="OVd-5k-Tre" firstAttribute="trailing" secondItem="hq4-iL-bp5" secondAttribute="trailing" id="gOV-jE-5kz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hq4-iL-bp5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ga-Ob-1YL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="-225"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Barbeque-w" width="447" height="445"/>
@@ -546,7 +588,4 @@ Smör, salt och peppar</string>
         <image name="toast-w" width="450" height="448"/>
         <image name="vego-w" width="448" height="446"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ozr-wx-XN2"/>
-    </inferredMetricsTieBreakers>
 </document>
