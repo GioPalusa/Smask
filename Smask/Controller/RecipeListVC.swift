@@ -93,8 +93,9 @@ extension RecipeListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let clicked = segue.destination as! RecipeVC
-        
-        clicked.chosenRecipe = sender as? Recipe
+        if segue.identifier == "viewRecepie" {
+            let clicked = segue.destination as! RecipeVC
+            clicked.chosenRecipe = sender as? Recipe
+        }
     }
 }
