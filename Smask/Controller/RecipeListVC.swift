@@ -36,6 +36,8 @@ class RecipeListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: NSNotification.Name(rawValue: "load"), object: nil)
+        
         // Check if later than iOS 10 for using the correct refresh control
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
@@ -46,6 +48,7 @@ class RecipeListVC: UIViewController {
         // Add refreshcontrol to this view controller and run a refresh of the table view,
         // fetching new data from Smask on Firebase, then listen for a value change
         refreshControl.addTarget(self, action: #selector(RecipeListVC.refreshTableView), for: UIControlEvents.valueChanged)
+        
     }
     
     // Before the view appears get, and reload the data
@@ -81,7 +84,7 @@ extension RecipeListVC: UITableViewDelegate, UITableViewDataSource {
     
     // populate the table view cells with info from the array of recipes
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "recepieCellMain") as? MainPageRecipeCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCellMain") as? MainPageRecipeCell else { return UITableViewCell() }
         let recipe = recipesArray[indexPath.row]
         
         cell.setCell(title: recipe.title, time: "\(recipe.time) minuter", categoryImg: recipe.icon)
@@ -89,11 +92,12 @@ extension RecipeListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "viewRecepie", sender: recipesArray[indexPath.row])
+        performSegue(withIdentifier: "viewRecipe", sender: recipesArray[indexPath.row])
     }
     
+    // Send the selected recipe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "viewRecepie" {
+        if segue.identifier == "viewRecipe" {
             let clicked = segue.destination as! RecipeVC
             clicked.chosenRecipe = sender as? Recipe
         }

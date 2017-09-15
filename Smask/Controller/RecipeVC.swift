@@ -21,7 +21,8 @@ class RecipeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         recepieTitleLbl.text = chosenRecipe.title
-        ingredientsLbl.text = chosenRecipe.howTo
+        ingredientsLbl.text = chosenRecipe.ingredients
+        doThisLbl.text = chosenRecipe.howTo
         timeLbl.text = "\(chosenRecipe.time) minuter"
     }
 

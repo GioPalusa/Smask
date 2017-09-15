@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-var chosenCategory : String = "fika"
+var chosenCategory : String = "Asiatiskt"
 var sortingChoice : String = "icon"
 
 class DataService {
@@ -22,7 +22,7 @@ class DataService {
     // Loop through every child and create an array of objects with recipes inside
     func getDatafromFIR(handler: @escaping (_ recipes : [Recipe]) -> ()) {
         var recipesArray = [Recipe]()
-        FIR_REF_CHOSEN_CATEGORY.queryOrdered(byChild: sortingChoice).observeSingleEvent(of: .value) { (recipeSnapshot) in
+        FIR_REF_CATEGORIES.child(chosenCategory).queryOrdered(byChild: sortingChoice).observeSingleEvent(of: .value) { (recipeSnapshot) in
             guard let recipeSnapshot = recipeSnapshot.children.allObjects as? [DataSnapshot]
                 else { return }
             for recipe in recipeSnapshot {
@@ -38,13 +38,13 @@ class DataService {
             handler(recipesArray)
         }
     }
+}
+
+func addDataToFIR(title: String, favourite: Bool, time: Int, howTo: String, ingredients: String, icon: String, category: String) {
+    let testRecept = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon)
+    let object : [String : Any] = ["favourite": testRecept.favourite, "howTo": testRecept.howTo, "ingredients": testRecept.ingredients, "time": testRecept.time, "title": testRecept.title, "icon": testRecept.icon]
     
-    func createTestData() {
-        let testRecept = Recipe(title: "Äppelpaj", favourite: false, time: 15, howto: "Do stuff", ingredients: "1 potato, 2 potato", icon: "bun")
-        let object : [String : Any] = ["favourite": testRecept.favourite, "howTo": testRecept.howTo, "ingredients": testRecept.ingredients, "time": testRecept.time, "title": testRecept.title, "icon": testRecept.icon]
-        
-        // Post test data
-        _ = FIR_REF_CHOSEN_CATEGORY.child(FIR_REF.childByAutoId().key).setValue(object)
-    }
+    // Post test data
+    _ = FIR_REF_CATEGORIES.child(category).child(FIR_REF.childByAutoId().key).setValue(object)
 }
 
