@@ -179,11 +179,11 @@
             <objects>
                 <viewController id="hqs-8H-d3B" customClass="RecipeVC" customModule="Smask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Az2-iE-gnc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUt-8x-vqV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-fC-4MJ">
                                         <rect key="frame" x="0.0" y="0.0" width="379" height="1101"/>
@@ -334,6 +334,7 @@ Smör, salt och peppar</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lgw-rA-onf"/>
                     </view>
+                    <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="doThisLbl" destination="xhy-2p-stv" id="ChA-I8-Ybf"/>
                         <outlet property="favouriteBtn" destination="KuU-w2-tvq" id="0dc-Cc-Kba"/>
@@ -344,7 +345,7 @@ Smör, salt och peppar</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uI4-01-zKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.5999999999999" y="467.3163418290855"/>
+            <point key="canvasLocation" x="1239" y="763"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="m4R-Oy-QHV">
@@ -371,7 +372,7 @@ Smör, salt och peppar</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Barbeque-w" translatesAutoresizingMaskIntoConstraints="NO" id="J90-Pm-YQl">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barbeque-w" translatesAutoresizingMaskIntoConstraints="NO" id="J90-Pm-YQl">
                                                     <rect key="frame" x="8" y="5" width="40" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -424,11 +425,23 @@ Smör, salt och peppar</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcQ-B6-GRY">
+                                <rect key="frame" x="270" y="20" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="4kc-21-6rB"/>
+                                    <constraint firstAttribute="height" constant="25" id="hi7-ss-9SH"/>
+                                </constraints>
+                                <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="lFm-DG-ooZ" kind="show" id="ZAO-mP-mCQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VK5-U9-cjj" firstAttribute="leading" secondItem="7gi-Xm-AUL" secondAttribute="leading" id="3oM-O1-b60"/>
                             <constraint firstItem="1tj-lM-EU1" firstAttribute="centerY" secondItem="ca5-FN-G4K" secondAttribute="centerY" id="4zh-Ua-tmF"/>
+                            <constraint firstItem="TcQ-B6-GRY" firstAttribute="top" secondItem="7gi-Xm-AUL" secondAttribute="top" id="9L6-Aj-3Kv"/>
                             <constraint firstItem="3ch-tR-eMt" firstAttribute="leading" secondItem="7gi-Xm-AUL" secondAttribute="leading" constant="20" id="Egu-MN-bJe"/>
                             <constraint firstItem="1tj-lM-EU1" firstAttribute="leading" secondItem="UWz-ew-Pkx" secondAttribute="trailing" constant="8" id="HR8-SI-dwE"/>
                             <constraint firstItem="VK5-U9-cjj" firstAttribute="trailing" secondItem="7gi-Xm-AUL" secondAttribute="trailing" id="X5l-ou-hMm"/>
@@ -436,6 +449,7 @@ Smör, salt och peppar</string>
                             <constraint firstItem="VK5-U9-cjj" firstAttribute="top" secondItem="ca5-FN-G4K" secondAttribute="bottom" constant="25" id="gOk-7g-Kms"/>
                             <constraint firstItem="UWz-ew-Pkx" firstAttribute="centerY" secondItem="ca5-FN-G4K" secondAttribute="centerY" id="kra-Z1-Vis"/>
                             <constraint firstItem="UWz-ew-Pkx" firstAttribute="leading" secondItem="7gi-Xm-AUL" secondAttribute="leading" constant="8" id="prY-UH-41l"/>
+                            <constraint firstItem="7gi-Xm-AUL" firstAttribute="trailing" secondItem="TcQ-B6-GRY" secondAttribute="trailing" constant="80" id="r5F-Ly-Ocm"/>
                             <constraint firstItem="ca5-FN-G4K" firstAttribute="leading" secondItem="7gi-Xm-AUL" secondAttribute="leading" constant="20" id="vv6-qS-OWe"/>
                             <constraint firstItem="ca5-FN-G4K" firstAttribute="top" secondItem="3ch-tR-eMt" secondAttribute="bottom" constant="25" id="y6w-Sk-OJK"/>
                             <constraint firstItem="VK5-U9-cjj" firstAttribute="bottom" secondItem="7gi-Xm-AUL" secondAttribute="bottom" id="yIn-Di-NzH"/>
@@ -451,12 +465,85 @@ Smör, salt och peppar</string>
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="-583.3583208395803"/>
         </scene>
+        <!--SettingsVC-->
+        <scene sceneID="2TI-bf-jr6">
+            <objects>
+                <viewController id="lFm-DG-ooZ" customClass="SettingsVC" customModule="Smask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jDW-ma-gm4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zyQ-4w-0oz">
+                                <rect key="frame" x="70" y="511" width="235" height="106"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3yq-q0-tAs">
+                                <rect key="frame" x="37" y="123.5" width="302" height="29"/>
+                                <segments>
+                                    <segment title="Category"/>
+                                    <segment title="Time"/>
+                                    <segment title="Alphabetically"/>
+                                </segments>
+                                <color key="tintColor" red="0.75294117650000003" green="0.20000000000000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sortingOptionVal:" destination="lFm-DG-ooZ" eventType="valueChanged" id="Fun-qy-aNj"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What should we sort the recipes on?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUr-Yw-DYi">
+                                <rect key="frame" x="47" y="90" width="281" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Made with pure ❤️ from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d80-uQ-I5i">
+                                <rect key="frame" x="94" y="491" width="189" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtO-hm-bZe">
+                                <rect key="frame" x="87.5" y="231.5" width="200" height="48"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="dRE-fE-vA5"/>
+                                    <constraint firstAttribute="width" constant="200" id="hVu-Tk-UkY"/>
+                                </constraints>
+                                <state key="normal" title="Save and close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveCloseBtn:" destination="lFm-DG-ooZ" eventType="touchUpInside" id="SmA-vV-3zs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GUr-Yw-DYi" firstAttribute="centerX" secondItem="jDW-ma-gm4" secondAttribute="centerX" id="57f-qi-UZB"/>
+                            <constraint firstItem="3yq-q0-tAs" firstAttribute="top" secondItem="GUr-Yw-DYi" secondAttribute="bottom" constant="10" id="8mP-Sa-4SK"/>
+                            <constraint firstItem="SMw-2k-PwU" firstAttribute="trailing" secondItem="zyQ-4w-0oz" secondAttribute="trailing" constant="70" id="Dq9-vR-U7a"/>
+                            <constraint firstItem="SMw-2k-PwU" firstAttribute="bottom" secondItem="zyQ-4w-0oz" secondAttribute="bottom" constant="50" id="Fzh-ai-NRL"/>
+                            <constraint firstItem="zyQ-4w-0oz" firstAttribute="leading" secondItem="SMw-2k-PwU" secondAttribute="leading" constant="70" id="ReG-TI-s1T"/>
+                            <constraint firstItem="3yq-q0-tAs" firstAttribute="centerX" secondItem="jDW-ma-gm4" secondAttribute="centerX" id="Sff-qN-BrE"/>
+                            <constraint firstItem="EtO-hm-bZe" firstAttribute="top" secondItem="3yq-q0-tAs" secondAttribute="bottom" constant="80" id="Ujv-oE-mlh"/>
+                            <constraint firstItem="EtO-hm-bZe" firstAttribute="centerX" secondItem="jDW-ma-gm4" secondAttribute="centerX" id="Zpx-Jc-ERE"/>
+                            <constraint firstItem="GUr-Yw-DYi" firstAttribute="top" secondItem="SMw-2k-PwU" secondAttribute="top" constant="70" id="ebC-td-oiX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SMw-2k-PwU"/>
+                    </view>
+                    <connections>
+                        <outlet property="sortingOption" destination="3yq-q0-tAs" id="9F2-gU-dhX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17V-YM-crc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5999999999999" y="-976.46176911544239"/>
+        </scene>
         <!--New RecipeVC-->
         <scene sceneID="TzC-R5-Qwf">
             <objects>
                 <viewController id="EiP-Gw-5js" customClass="NewRecipeVC" customModule="Smask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qC5-1K-vbC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="830"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-5k-Tre">
@@ -464,8 +551,8 @@ Smör, salt och peppar</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem title="Nytt recept" id="69y-W7-fsD">
-                                        <barButtonItem key="leftBarButtonItem" title="Avbryt" id="RwB-th-15q">
+                                    <navigationItem title="New recipe" id="69y-W7-fsD">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="RwB-th-15q">
                                             <connections>
                                                 <action selector="cancelBtnPressed:" destination="EiP-Gw-5js" id="xIw-Pb-xUt"/>
                                             </connections>
@@ -475,39 +562,78 @@ Smör, salt och peppar</string>
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxR-y0-L0z">
-                                <rect key="frame" x="0.0" y="64" width="375" height="758"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="958"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOE-WP-jdW">
-                                        <rect key="frame" x="20" y="20" width="313.5" height="125"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="125" id="2cv-wl-NgH"/>
-                                        </constraints>
-                                        <state key="normal" image="uploadCamera"/>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="psb-Rd-Ehe">
-                                        <rect key="frame" x="10" y="166" width="348.5" height="617.5"/>
+                                        <rect key="frame" x="10" y="0.0" width="348.5" height="956.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titel på receptet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ue1-CU-dEX">
-                                                <rect key="frame" x="0.0" y="0.0" width="348.5" height="30"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eeF-o7-m0C">
+                                                <rect key="frame" x="0.0" y="0.0" width="348.5" height="237"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="237" id="5XR-n0-JS5"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eYn-Ku-uV3">
+                                                <rect key="frame" x="0.0" y="247" width="348.5" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXa-rW-R0k">
+                                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="36"/>
+                                                        <color key="backgroundColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Camera">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="TakeImageBtnPressed:" destination="EiP-Gw-5js" eventType="touchUpInside" id="VfL-Zl-RB3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUy-hp-jBD">
+                                                        <rect key="frame" x="179.5" y="0.0" width="169" height="36"/>
+                                                        <color key="backgroundColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Image library">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="pickImageBtnPressed:" destination="EiP-Gw-5js" eventType="touchUpInside" id="BE8-Yy-Flu"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2g-f5-gJW">
+                                                <rect key="frame" x="0.0" y="293" width="348.5" height="36"/>
+                                                <color key="backgroundColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Change image">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="changeImgBtnPressed:" destination="EiP-Gw-5js" eventType="touchUpInside" id="FAs-Wy-hHe"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titel for your recipe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ue1-CU-dEX">
+                                                <rect key="frame" x="0.0" y="339" width="348.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-FP-IVc">
-                                                <rect key="frame" x="0.0" y="40" width="348.5" height="2"/>
+                                                <rect key="frame" x="0.0" y="379" width="348.5" height="2"/>
                                                 <color key="backgroundColor" red="0.75294117647058822" green="0.20000000000000001" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="g2e-9f-g3P"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hur lång tid tar det att laga?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS6-Sp-5rt">
-                                                <rect key="frame" x="0.0" y="52" width="216" height="23.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long does this take to cook?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS6-Sp-5rt">
+                                                <rect key="frame" x="0.0" y="391" width="256.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="t3F-ny-o2z">
-                                                <rect key="frame" x="0.0" y="85.5" width="348.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="424.5" width="348.5" height="30"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="240" translatesAutoresizingMaskIntoConstraints="NO" id="4ll-mS-bub">
                                                         <rect key="frame" x="-2" y="0.0" width="254" height="31"/>
@@ -536,42 +662,42 @@ Smör, salt och peppar</string>
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denna maträtt läggs automatiskt till i katerorin under 15 minuter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzY-rz-RqE">
-                                                <rect key="frame" x="0.0" y="125.5" width="348.5" height="15.5"/>
+                                                <rect key="frame" x="0.0" y="464.5" width="348.5" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPE-uO-eYb">
-                                                <rect key="frame" x="0.0" y="151" width="348.5" height="2"/>
+                                                <rect key="frame" x="0.0" y="490" width="348.5" height="2"/>
                                                 <color key="backgroundColor" red="0.75294117650000003" green="0.20000000000000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="5Rb-LA-zbJ"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vad är det för typ av mat?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHA-Mg-aKa">
-                                                <rect key="frame" x="0.0" y="163" width="197.5" height="23.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What category of food is this?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHA-Mg-aKa">
+                                                <rect key="frame" x="0.0" y="502" width="230" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noa-Dg-UfR">
-                                                <rect key="frame" x="0.0" y="196.5" width="348.5" height="80"/>
+                                                <rect key="frame" x="0.0" y="535.5" width="348.5" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="zBB-Fb-VND"/>
                                                 </constraints>
                                             </pickerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t36-y7-yCC">
-                                                <rect key="frame" x="0.0" y="286.5" width="348.5" height="2"/>
+                                                <rect key="frame" x="0.0" y="625.5" width="348.5" height="2"/>
                                                 <color key="backgroundColor" red="0.75294117650000003" green="0.20000000000000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="h4P-4E-uwO"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="dyi-iI-Im2">
-                                                <rect key="frame" x="0.0" y="298.5" width="348.5" height="123.5"/>
+                                                <rect key="frame" x="0.0" y="637.5" width="348.5" height="123.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredienser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii1-K9-1wH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="99" height="23.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii1-K9-1wH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -594,17 +720,17 @@ Smör, salt och peppar</string>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwO-to-fbV">
-                                                <rect key="frame" x="0.0" y="432" width="348.5" height="2"/>
+                                                <rect key="frame" x="0.0" y="771" width="348.5" height="2"/>
                                                 <color key="backgroundColor" red="0.75294117650000003" green="0.20000000000000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="7ph-46-0H9"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ffQ-3o-WPj">
-                                                <rect key="frame" x="0.0" y="444" width="348.5" height="123.5"/>
+                                                <rect key="frame" x="0.0" y="783" width="348.5" height="123.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gör så här" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mO1-ZP-yBX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="23.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do like this" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mO1-ZP-yBX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="85.5" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -625,13 +751,13 @@ Smör, salt och peppar</string>
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7V-HO-n6j">
-                                                <rect key="frame" x="0.0" y="577.5" width="348.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="916.5" width="348.5" height="40"/>
                                                 <color key="backgroundColor" red="0.1803921568627451" green="0.66666666666666663" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Ozy-Ab-IsQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="SPARA">
+                                                <state key="normal" title="SAVE">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -645,6 +771,9 @@ Smör, salt och peppar</string>
                                             <constraint firstItem="jzY-rz-RqE" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="93R-DU-2sy"/>
                                             <constraint firstAttribute="trailing" secondItem="t36-y7-yCC" secondAttribute="trailing" id="A02-lo-r8c"/>
                                             <constraint firstAttribute="trailing" secondItem="noa-Dg-UfR" secondAttribute="trailing" id="B5k-nv-gzH"/>
+                                            <constraint firstAttribute="trailing" secondItem="p2g-f5-gJW" secondAttribute="trailing" id="E7g-Tp-S84"/>
+                                            <constraint firstItem="eYn-Ku-uV3" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="H4i-vW-qNN"/>
+                                            <constraint firstItem="p2g-f5-gJW" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="Hal-Jn-chl"/>
                                             <constraint firstAttribute="trailing" secondItem="dyi-iI-Im2" secondAttribute="trailing" id="Kz8-KZ-M65"/>
                                             <constraint firstItem="dyi-iI-Im2" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="MTo-AP-z4F"/>
                                             <constraint firstItem="wwO-to-fbV" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="Rf6-5v-nQz"/>
@@ -654,8 +783,8 @@ Smör, salt och peppar</string>
                                             <constraint firstItem="yPE-uO-eYb" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="Vgf-0v-j58"/>
                                             <constraint firstAttribute="trailing" secondItem="wwO-to-fbV" secondAttribute="trailing" id="WRb-qb-G4Y"/>
                                             <constraint firstItem="t36-y7-yCC" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="YSQ-ej-dxe"/>
+                                            <constraint firstAttribute="trailing" secondItem="eYn-Ku-uV3" secondAttribute="trailing" id="gzg-A6-wpj"/>
                                             <constraint firstAttribute="trailing" secondItem="yPE-uO-eYb" secondAttribute="trailing" id="hY9-CP-RBL"/>
-                                            <constraint firstItem="Ue1-CU-dEX" firstAttribute="top" secondItem="psb-Rd-Ehe" secondAttribute="top" id="jiI-CG-xiW"/>
                                             <constraint firstAttribute="trailing" secondItem="jzY-rz-RqE" secondAttribute="trailing" id="kgN-a5-v6k"/>
                                             <constraint firstItem="Ue1-CU-dEX" firstAttribute="leading" secondItem="psb-Rd-Ehe" secondAttribute="leading" id="r70-ND-cgR"/>
                                             <constraint firstAttribute="trailing" secondItem="Ue1-CU-dEX" secondAttribute="trailing" id="uyl-GA-x3O"/>
@@ -665,12 +794,9 @@ Smör, salt och peppar</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="psb-Rd-Ehe" secondAttribute="trailing" constant="10" id="6Ne-Za-Use"/>
-                                    <constraint firstItem="eOE-WP-jdW" firstAttribute="top" secondItem="GxR-y0-L0z" secondAttribute="top" constant="20" id="8mx-gR-SI4"/>
+                                    <constraint firstItem="psb-Rd-Ehe" firstAttribute="top" secondItem="GxR-y0-L0z" secondAttribute="top" id="8kB-HZ-nE3"/>
                                     <constraint firstItem="psb-Rd-Ehe" firstAttribute="leading" secondItem="GxR-y0-L0z" secondAttribute="leading" constant="10" id="ABt-nT-Vdv"/>
-                                    <constraint firstItem="psb-Rd-Ehe" firstAttribute="top" secondItem="eOE-WP-jdW" secondAttribute="bottom" constant="21" id="FPQ-Kj-b6t"/>
-                                    <constraint firstItem="eOE-WP-jdW" firstAttribute="leading" secondItem="GxR-y0-L0z" secondAttribute="leading" constant="20" id="Gcu-BY-suq"/>
                                     <constraint firstAttribute="bottom" secondItem="psb-Rd-Ehe" secondAttribute="bottom" constant="20" id="tfF-F4-wZa"/>
-                                    <constraint firstAttribute="trailing" secondItem="eOE-WP-jdW" secondAttribute="trailing" constant="35" id="xLl-OT-Ez5"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -680,40 +806,44 @@ Smör, salt och peppar</string>
                             <constraint firstItem="OVd-5k-Tre" firstAttribute="leading" secondItem="hq4-iL-bp5" secondAttribute="leading" id="9Av-yC-qvo"/>
                             <constraint firstItem="OVd-5k-Tre" firstAttribute="top" secondItem="hq4-iL-bp5" secondAttribute="top" id="9Vm-fk-FTJ"/>
                             <constraint firstItem="hq4-iL-bp5" firstAttribute="bottom" secondItem="GxR-y0-L0z" secondAttribute="bottom" constant="8" id="LJL-Xa-5EW"/>
-                            <constraint firstItem="GxR-y0-L0z" firstAttribute="top" secondItem="OVd-5k-Tre" secondAttribute="bottom" id="dJA-5H-HZT"/>
+                            <constraint firstItem="GxR-y0-L0z" firstAttribute="top" secondItem="OVd-5k-Tre" secondAttribute="bottom" constant="20" id="dJA-5H-HZT"/>
                             <constraint firstItem="OVd-5k-Tre" firstAttribute="trailing" secondItem="hq4-iL-bp5" secondAttribute="trailing" id="gOV-jE-5kz"/>
                             <constraint firstItem="GxR-y0-L0z" firstAttribute="leading" secondItem="hq4-iL-bp5" secondAttribute="leading" id="rSn-Nb-GYd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hq4-iL-bp5"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="830"/>
+                    <size key="freeformSize" width="375" height="1050"/>
                     <connections>
                         <outlet property="autoAddTxtLbl" destination="jzY-rz-RqE" id="gL9-qn-YE4"/>
                         <outlet property="categoryPcr" destination="noa-Dg-UfR" id="Ls2-UU-SKy"/>
+                        <outlet property="changeImgBtn" destination="p2g-f5-gJW" id="HTZ-pj-Qnl"/>
                         <outlet property="howToTxt" destination="kaT-uq-vRw" id="Dnz-IU-w10"/>
                         <outlet property="ingredientsTxt" destination="Qil-Pk-Bix" id="OJs-xx-x46"/>
                         <outlet property="minuteSlider" destination="4ll-mS-bub" id="P4S-md-MqM"/>
+                        <outlet property="pickImageBtnsStack" destination="eYn-Ku-uV3" id="nlY-tq-fga"/>
+                        <outlet property="recipeImg" destination="eeF-o7-m0C" id="8fB-g7-Kjj"/>
                         <outlet property="titleTxt" destination="Ue1-CU-dEX" id="eqf-UP-33j"/>
                         <outlet property="totalMinutesLbl" destination="2b4-Sd-Iap" id="Og3-Ja-L9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ga-Ob-1YL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.5999999999999" y="-375.11244377811096"/>
+            <point key="canvasLocation" x="1238" y="-136"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Barbeque-w" width="447" height="445"/>
         <image name="Spaghetti alla carbonara02" width="1280" height="853"/>
         <image name="add" width="52" height="52"/>
         <image name="back" width="256" height="256"/>
+        <image name="barbeque-w" width="447" height="445"/>
         <image name="burgerMenu" width="512" height="512"/>
         <image name="home-w" width="58" height="58"/>
+        <image name="logo" width="393" height="106"/>
         <image name="pasta" width="454" height="451"/>
+        <image name="settings" width="512" height="512"/>
         <image name="smask-logo" width="506" height="157"/>
         <image name="star" width="256" height="256"/>
         <image name="time" width="128" height="128"/>
-        <image name="uploadCamera" width="64" height="111"/>
     </resources>
 </document>

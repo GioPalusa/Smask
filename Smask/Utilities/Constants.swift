@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 // Recepie categories
-let CATEGORIES : [String] = ["Under 15 minuter", "Asiatiskt", "Pasta", "Snabbmat", "Kallskuret", "Fika", "Frukost", "Vegetariskt", "Grillat"]
+let CATEGORIES : [String] = ["Under 15 minuter", "Asiatiskt", "Pasta", "Snabbmat", "Kött", "Fisk", "Fika", "Frukost", "Vegetariskt", "Grillat"]
 
 let CATEGORY_IMAGES: [String : String] = [
     "Under 15 minuter" : "micro",
@@ -21,7 +21,9 @@ let CATEGORY_IMAGES: [String : String] = [
     "Fika" : "bun",
     "Frukost" : "toast",
     "Vegetariskt" : "vego",
-    "Grillat" : "barbeque"
+    "Grillat" : "barbeque",
+    "Fisk" : "fish",
+    "Kött" : "meat"
 ]
 
 // User data

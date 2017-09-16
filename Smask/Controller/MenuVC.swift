@@ -21,12 +21,15 @@ class MenuVC: UIViewController {
 
     }
 
+// functions
+    // set the category chosen from the table view
     func categoryChoice(category: String) {
         chosenCategory = category
         self.revealViewController().revealToggle(animated: true)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
+    // Set the start category on home button pressed
     @IBAction func homeBtnPressed(_ sender: Any) {
         categoryChoice(category: "allRecipes")
     }
@@ -40,12 +43,13 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    // Rerturn as many rows as there are recipes in the array
+    // Return as many rows as there are recipes in the array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CATEGORIES.count
     }
     
     // populate the table view cells with info from the array of recipes
+    // -w is added to the image name to use white images
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryMenuCell") as? CategoryMenuCell else { return UITableViewCell() }
         

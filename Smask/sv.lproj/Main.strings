@@ -1,0 +1,78 @@
+
+/* Class = "UILabel"; text = "Visa alla recept"; ObjectID = "1tj-lM-EU1"; */
+"1tj-lM-EU1.text" = "Visa alla recept";
+
+/* Class = "UILabel"; text = "15 minuter"; ObjectID = "2b4-Sd-Iap"; */
+"2b4-Sd-Iap.text" = "15 minuter";
+
+/* Class = "UILabel"; text = "Kategorier"; ObjectID = "3ch-tR-eMt"; */
+"3ch-tR-eMt.text" = "Kategorier";
+
+/* Class = "UINavigationItem"; title = "New recipe"; ObjectID = "69y-W7-fsD"; */
+"69y-W7-fsD.title" = "Nytt recept";
+
+/* Class = "UILabel"; text = "INGREDIENSER"; ObjectID = "A8E-XY-GS3"; */
+"A8E-XY-GS3.text" = "INGREDIENSER";
+
+/* Class = "UILabel"; text = "Pasta Carbonara"; ObjectID = "Er2-Vs-oPZ"; */
+"Er2-Vs-oPZ.text" = "Pasta Carbonara";
+
+/* Class = "UILabel"; text = "GÖR SÅ HÄR"; ObjectID = "IQl-jj-lAe"; */
+"IQl-jj-lAe.text" = "GÖR SÅ HÄR";
+
+/* Class = "UILabel"; text = "Ingredients"; ObjectID = "Ii1-K9-1wH"; */
+"Ii1-K9-1wH.text" = "Ingredienser";
+
+/* Class = "UILabel"; text = "300gr spaghetti\n150gr rökt fläsk\n0,5dl vispgrädde\n1 finhackad vitläksklyfta\n3dl riven gratängost\nSmör, salt och peppar"; ObjectID = "L5C-hT-Wcw"; */
+"L5C-hT-Wcw.text" = "300gr spaghetti\n150gr rökt fläsk\n0,5dl vispgrädde\n1 finhackad vitläksklyfta\n3dl riven gratängost\nSmör, salt och peppar";
+
+/* Class = "UILabel"; text = "25-30"; ObjectID = "MyL-AU-bog"; */
+"MyL-AU-bog.text" = "25-30";
+
+/* Class = "UITextView"; text = "100 gr Första ingrediens\n250 gr Andra ingrediens 2 dl Tredje ingrediens"; ObjectID = "Qil-Pk-Bix"; */
+"Qil-Pk-Bix.text" = "100 gr Första ingrediens\n250 gr Andra ingrediens 2 dl Tredje ingrediens";
+
+/* Class = "UILabel"; text = "15 minuter"; ObjectID = "Rth-RT-oes"; */
+"Rth-RT-oes.text" = "15 minuter";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "RwB-th-15q"; */
+"RwB-th-15q.title" = "Avbryt";
+
+/* Class = "UITextField"; placeholder = "Titel for your recipe"; ObjectID = "Ue1-CU-dEX"; */
+"Ue1-CU-dEX.placeholder" = "Titel för ditt recept";
+
+/* Class = "UILabel"; text = "Pasta carbonara"; ObjectID = "aoW-rd-Da7"; */
+"aoW-rd-Da7.text" = "Pasta carbonara";
+
+/* Class = "UIButton"; normalTitle = "Image library"; ObjectID = "dUy-hp-jBD"; */
+"dUy-hp-jBD.normalTitle" = "Bildbibliotek";
+
+/* Class = "UILabel"; text = "What category of food is this?"; ObjectID = "fHA-Mg-aKa"; */
+"fHA-Mg-aKa.text" = "Vilken kategori tillhör detta?";
+
+/* Class = "UILabel"; text = "CATEGORY"; ObjectID = "gFc-dT-0OY"; */
+"gFc-dT-0OY.text" = "KATEGORI";
+
+/* Class = "UILabel"; text = "Denna maträtt läggs automatiskt till i katerorin under 15 minuter"; ObjectID = "jzY-rz-RqE"; */
+"jzY-rz-RqE.text" = "Denna maträtt läggs automatiskt till i katerorin under 15 minuter";
+
+/* Class = "UITextView"; text = "Först så måste du... sedan så måste du..."; ObjectID = "kaT-uq-vRw"; */
+"kaT-uq-vRw.text" = "Först så måste du... sedan så måste du...";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "l7V-HO-n6j"; */
+"l7V-HO-n6j.normalTitle" = "SPARA";
+
+/* Class = "UILabel"; text = "Do like this"; ObjectID = "mO1-ZP-yBX"; */
+"mO1-ZP-yBX.text" = "Gör så här";
+
+/* Class = "UIButton"; normalTitle = "Change image"; ObjectID = "p2g-f5-gJW"; */
+"p2g-f5-gJW.normalTitle" = "Ändra bild";
+
+/* Class = "UILabel"; text = "Koka spaghettin. Skär fläsket i små tärningar. Stek fläsket knaprigt i smör i en stekpanna. Vispa ihop grädde, salt, vitlök och hälften av osten. Rör ner fläsk och ostblandningen i den kokta spaghettin och rör kraftigt till en krämig konsistens. Strö över resten av osten och peppar. Servera pastan med äggula."; ObjectID = "xhy-2p-stv"; */
+"xhy-2p-stv.text" = "Koka spaghettin. Skär fläsket i små tärningar. Stek fläsket knaprigt i smör i en stekpanna. Vispa ihop grädde, salt, vitlök och hälften av osten. Rör ner fläsk och ostblandningen i den kokta spaghettin och rör kraftigt till en krämig konsistens. Strö över resten av osten och peppar. Servera pastan med äggula.";
+
+/* Class = "UILabel"; text = "How long does this take to cook?"; ObjectID = "yS6-Sp-5rt"; */
+"yS6-Sp-5rt.text" = "Hur lång tid tar det här att laga?";
+
+/* Class = "UIButton"; normalTitle = "Camera"; ObjectID = "yXa-rW-R0k"; */
+"yXa-rW-R0k.normalTitle" = "Kamera";

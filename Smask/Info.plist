@@ -28,6 +28,11 @@
 	<array>
 		<string>armv7</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>The camera is needed to take wounderful images of your food</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>The photo library is needed to choose existing images of your recipe</string>
+
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

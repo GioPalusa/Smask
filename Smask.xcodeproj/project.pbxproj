@@ -16,6 +16,7 @@
 		AC5ED3D61F68140B00996293 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3D51F68140B00996293 /* Constants.swift */; };
 		AC7BA6111F6BE07300B413C4 /* CategoryMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BA6101F6BE07300B413C4 /* CategoryMenuCell.swift */; };
 		ACAD77221F65990B00DF4B7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */; };
+		ACAFA91A1F6DE3C100D11C3F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAFA9191F6DE3C100D11C3F /* SettingsVC.swift */; };
 		ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */; };
 		ACC25F311F62D1D90088CF12 /* RecipeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F301F62D1D90088CF12 /* RecipeListVC.swift */; };
 		ACC25F341F62D1D90088CF12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC25F321F62D1D90088CF12 /* Main.storyboard */; };
@@ -39,6 +40,9 @@
 		AC5ED3D51F68140B00996293 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC7BA6101F6BE07300B413C4 /* CategoryMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuCell.swift; sourceTree = "<group>"; };
 		ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ACAFA9161F6DD32F00D11C3F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		ACAFA9171F6DD32F00D11C3F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ACAFA9191F6DE3C100D11C3F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		ACC25F2B1F62D1D90088CF12 /* Smask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC25F301F62D1D90088CF12 /* RecipeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListVC.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				ACD148ED1F642F0C007265F2 /* MenuVC.swift */,
 				AC28AFC41F67264D0014066B /* RecipeVC.swift */,
 				AC17FFAF1F6B051D0061891A /* NewRecipeVC.swift */,
+				ACAFA9191F6DE3C100D11C3F /* SettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				ACC25F291F62D1D90088CF12 /* Resources */,
 				6CEDA58800D37394EA619B9E /* [CP] Embed Pods Frameworks */,
 				8EEDA1F9DB238C25721545E7 /* [CP] Copy Pods Resources */,
+				ACAFA9181F6DD72200D11C3F /* Re-generate Storyboard Strings File */,
 			);
 			buildRules = (
 			);
@@ -275,6 +281,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smask/Pods-Smask-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ACAFA9181F6DD72200D11C3F /* Re-generate Storyboard Strings File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Path/Base.lproj/Main.storyboard",
+			);
+			name = "Re-generate Storyboard Strings File";
+			outputPaths = (
+				"${SRCROOT}/Path/sv.lproj/Main.strings",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\ncd ${PROJECT_DIR}\n\nnib_in=${SRCROOT}/Path/Base.lproj/Main.storyboard\nstr_out=${SRCROOT}/Path/sv.lproj/Main.strings\n\n# If the strings file is missing or empty, or\n# if the storyboard is more recent:\nif [[ ! -n $str_out || $nib_in -nt $str_out ]]; then\necho \"Re-generating: $str_out\"\nibtool --export-strings-file $str_out $nib_in\nfi";
+		};
 		E60891FAFB98504A5AAB5BC6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +324,7 @@
 				AC5ED3CF1F67F98500996293 /* Recipe.swift in Sources */,
 				AC7BA6111F6BE07300B413C4 /* CategoryMenuCell.swift in Sources */,
 				AC17FFB01F6B051D0061891A /* NewRecipeVC.swift in Sources */,
+				ACAFA91A1F6DE3C100D11C3F /* SettingsVC.swift in Sources */,
 				ACD148EE1F642F0C007265F2 /* MenuVC.swift in Sources */,
 				AC12954B1F6957280062F1FF /* MainPageRecipeCell.swift in Sources */,
 				ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */,
@@ -318,6 +341,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ACC25F331F62D1D90088CF12 /* Base */,
+				ACAFA9161F6DD32F00D11C3F /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -326,6 +350,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ACC25F381F62D1D90088CF12 /* Base */,
+				ACAFA9171F6DD32F00D11C3F /* sv */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -337,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -394,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
