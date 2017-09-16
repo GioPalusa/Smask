@@ -95,6 +95,15 @@ extension RecipeListVC: UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "viewRecipe", sender: recipesArray[indexPath.row])
     }
     
+    // Slide to delete entry from the table
+    // Deletes from active category, all recipes and "under 15 minutes"
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        FIR_REF_CATEGORIES.child("allRecipes").child(recipesArray[indexPath.row].key).setValue(nil)
+        FIR_REF_CATEGORIES.child("Under 15 minuter").child(recipesArray[indexPath.row].key).setValue(nil)
+        FIR_REF_CATEGORIES.child(chosenCategory).child(recipesArray[indexPath.row].key).setValue(nil)
+        refreshTableView()
+    }
+    
     // Send the selected recipe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewRecipe" {

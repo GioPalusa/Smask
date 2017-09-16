@@ -12,7 +12,7 @@ import UIKit
 class MenuVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +26,12 @@ class MenuVC: UIViewController {
         self.revealViewController().revealToggle(animated: true)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
+    
+    @IBAction func homeBtnPressed(_ sender: Any) {
+        categoryChoice(category: "allRecipes")
+    }
+    
+    
 }
 
 extension MenuVC: UITableViewDelegate, UITableViewDataSource {
@@ -58,4 +64,6 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             clicked.chosenRecipe = sender as? Recipe
         }
     }
+    
+    
 }

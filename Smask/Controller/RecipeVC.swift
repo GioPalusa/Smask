@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RecipeVC: UIViewController {
     
     @IBOutlet weak var recepieTitleLbl: UILabel!
@@ -24,7 +25,14 @@ class RecipeVC: UIViewController {
         ingredientsLbl.text = chosenRecipe.ingredients
         doThisLbl.text = chosenRecipe.howTo
         timeLbl.text = "\(chosenRecipe.time) minuter"
+        
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(backBtnPressed(_:)))
+        edgePan.edges = .left
+        
+        view.addGestureRecognizer(edgePan)
     }
+    
+   
 
     @IBAction func backBtnPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

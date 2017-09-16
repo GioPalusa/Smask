@@ -9,7 +9,8 @@
 import Foundation
 import Firebase
 
-var chosenCategory : String = "Asiatiskt"
+// Standard value when the app starts
+var chosenCategory : String = "allRecipes"
 var sortingChoice : String = "icon"
 
 class DataService {
@@ -26,13 +27,14 @@ class DataService {
             guard let recipeSnapshot = recipeSnapshot.children.allObjects as? [DataSnapshot]
                 else { return }
             for recipe in recipeSnapshot {
+                let key = recipe.key 
                 let favourite = recipe.childSnapshot(forPath: "favourite").value as! Bool
                 let title = recipe.childSnapshot(forPath: "title").value as! String
                 let howTo = recipe.childSnapshot(forPath: "howTo").value as! String
                 let ingredients = recipe.childSnapshot(forPath: "ingredients").value as! String
                 let time = recipe.childSnapshot(forPath: "time").value as! Int
                 let icon = recipe.childSnapshot(forPath: "icon").value as! String
-                let recipeObject = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon)
+                let recipeObject = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon, key: key)
                 recipesArray.append(recipeObject)
             }
             handler(recipesArray)
@@ -41,10 +43,19 @@ class DataService {
 }
 
 func addDataToFIR(title: String, favourite: Bool, time: Int, howTo: String, ingredients: String, icon: String, category: String) {
-    let testRecept = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon)
-    let object : [String : Any] = ["favourite": testRecept.favourite, "howTo": testRecept.howTo, "ingredients": testRecept.ingredients, "time": testRecept.time, "title": testRecept.title, "icon": testRecept.icon]
     
-    // Post test data
-    _ = FIR_REF_CATEGORIES.child(category).child(FIR_REF.childByAutoId().key).setValue(object)
+    // Create random key
+    let tempKey = FIR_REF.childByAutoId().key
+    
+    let newRecipe = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon, key: tempKey)
+    let object : [String : Any] = ["favourite": newRecipe.favourite, "howTo": newRecipe.howTo, "ingredients": newRecipe.ingredients, "time": newRecipe.time, "title": newRecipe.title, "icon": newRecipe.icon]
+    
+    // Post recieved data
+    _ = FIR_REF_CATEGORIES.child(category).child(tempKey).setValue(object)
+    _ = FIR_REF_CATEGORIES.child("allRecipes").child(tempKey).setValue(object)
+    
+    if time <= 15 {
+        _ = FIR_REF_CATEGORIES.child("Under 15 minuter").child(tempKey).setValue(object)
+    }
 }
 
