@@ -11,11 +11,11 @@ import Firebase
 
 class RecipeListVC: UIViewController {
     
-    @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var timeIndicatorLbl: UILabel!
     @IBOutlet weak var recepieTitleLbl: UILabel!
     @IBOutlet weak var categoryImg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var burgerMenuBtn: UIBarButtonItem!
     
     var recipesArray = [Recipe]()
     var refreshControl: UIRefreshControl = UIRefreshControl()
@@ -27,7 +27,8 @@ class RecipeListVC: UIViewController {
         Database.database().isPersistenceEnabled = false
         
         // Open up the sidebar menu using revealViewController
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+//        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        
         
         // If the user taps on the RecepieListVC or pans to it, the side menu closes
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -38,7 +39,7 @@ class RecipeListVC: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: NSNotification.Name(rawValue: "load"), object: nil)
         
-        // Check if later than iOS 10 for using the correct refresh control
+        // Check if later than iOS 10 to use the correct refresh control
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
         } else {
@@ -49,7 +50,23 @@ class RecipeListVC: UIViewController {
         // fetching new data from Smask on Firebase, then listen for a value change
         refreshControl.addTarget(self, action: #selector(RecipeListVC.refreshTableView), for: UIControlEvents.valueChanged)
         
+        // Add the smask logo to the navigation bar
+        let logo = UIImage(named: "smask-barlogo")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
     }
+    
+// IB Actions
+    @IBAction func unwindToStart(segue: UIStoryboardSegue) {}
+    
+    @IBAction func burgerBtnPressed(_ sender: Any) {
+        // WHAT TO DO?!
+    }
+    
+    
+// Functions
     
     // Before the view appears get, and reload the data
     override func viewDidAppear(_ animated: Bool) {

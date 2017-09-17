@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		7B079DD88F6E09148659A706 /* Pods_Smask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326A4A89799DF2F502A33673 /* Pods_Smask.framework */; };
 		AC12954B1F6957280062F1FF /* MainPageRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12954A1F6957280062F1FF /* MainPageRecipeCell.swift */; };
-		AC12954E1F6971AB0062F1FF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12954D1F6971AB0062F1FF /* DataService.swift */; };
 		AC17FFB01F6B051D0061891A /* NewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC17FFAF1F6B051D0061891A /* NewRecipeVC.swift */; };
 		AC28AFC51F67264D0014066B /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28AFC41F67264D0014066B /* RecipeVC.swift */; };
+		AC4C96DA1F6EABBD00B5CA8D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C96D91F6EABBD00B5CA8D /* DataService.swift */; };
 		AC5ED3CF1F67F98500996293 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3CE1F67F98500996293 /* Recipe.swift */; };
 		AC5ED3D61F68140B00996293 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3D51F68140B00996293 /* Constants.swift */; };
 		AC7BA6111F6BE07300B413C4 /* CategoryMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BA6101F6BE07300B413C4 /* CategoryMenuCell.swift */; };
@@ -30,9 +30,9 @@
 		326A4A89799DF2F502A33673 /* Pods_Smask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA2E03EAF296F095157EED /* Pods-Smask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smask/Pods-Smask.debug.xcconfig"; sourceTree = "<group>"; };
 		AC12954A1F6957280062F1FF /* MainPageRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageRecipeCell.swift; sourceTree = "<group>"; };
-		AC12954D1F6971AB0062F1FF /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		AC17FFAF1F6B051D0061891A /* NewRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeVC.swift; sourceTree = "<group>"; };
 		AC28AFC41F67264D0014066B /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
+		AC4C96D91F6EABBD00B5CA8D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		AC5ED3CE1F67F98500996293 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		AC5ED3D01F680B6C00996293 /* Smask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smask-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC5ED3D11F680B6C00996293 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		AC12954C1F6971810062F1FF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AC12954D1F6971AB0062F1FF /* DataService.swift */,
+				AC4C96D91F6EABBD00B5CA8D /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -319,8 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC12954E1F6971AB0062F1FF /* DataService.swift in Sources */,
 				ACC25F311F62D1D90088CF12 /* RecipeListVC.swift in Sources */,
+				AC4C96DA1F6EABBD00B5CA8D /* DataService.swift in Sources */,
 				AC5ED3CF1F67F98500996293 /* Recipe.swift in Sources */,
 				AC7BA6111F6BE07300B413C4 /* CategoryMenuCell.swift in Sources */,
 				AC17FFB01F6B051D0061891A /* NewRecipeVC.swift in Sources */,

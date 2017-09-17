@@ -11,7 +11,7 @@ import UIKit
 
 class RecipeVC: UIViewController {
     
-    @IBOutlet weak var recepieTitleLbl: UILabel!
+    @IBOutlet weak var titleBar: UINavigationItem!
     @IBOutlet weak var favouriteBtn: UIButton!
     @IBOutlet weak var ingredientsLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
@@ -21,16 +21,11 @@ class RecipeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        recepieTitleLbl.text = chosenRecipe.title
+        titleBar.title = chosenRecipe.title
         ingredientsLbl.text = chosenRecipe.ingredients
         doThisLbl.text = chosenRecipe.howTo
         timeLbl.text = "\(chosenRecipe.time) minuter"
-        
-        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(backBtnPressed(_:)))
-        edgePan.edges = .left
-        
-        view.addGestureRecognizer(edgePan)
-    }
+        }
     
    
 

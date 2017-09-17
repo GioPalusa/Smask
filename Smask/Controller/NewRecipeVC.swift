@@ -79,8 +79,6 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         pickImageBtnsStack.isHidden = false
     }
     
-    
-    
     // Slider for choosing amount of minutes
     @IBAction func sliderChanged(sender: UISlider) {
         totalMinutesLbl.text = "\(Int(sender.value)) minuter"
@@ -92,11 +90,6 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         } else {
             autoAddTxtLbl.isHidden = true
         }
-    }
-    
-    // Close the view on cancel button pressed
-    @IBAction func cancelBtnPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -138,6 +131,8 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         } else {
             addDataToFIR(title: titleTxt.text!, favourite: false, time: minutesFromSlider, howTo: howToTxt.text, ingredients: ingredientsTxt.text, icon: CATEGORY_IMAGES[selectedCategory]!, category: selectedCategory)
             self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "unwindToStart", sender: self)
+
         }
     }
     
