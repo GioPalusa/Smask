@@ -124,7 +124,7 @@
                     <navigationItem key="navigationItem" id="Xw6-gv-wAV">
                         <barButtonItem key="leftBarButtonItem" image="burgerMenu" id="iAN-qv-GUZ">
                             <connections>
-                                <action selector="burgerBtnPressed:" destination="BYZ-38-t0r" id="6hr-aC-dKy"/>
+                                <action selector="burgerBtnPressed:" destination="BYZ-38-t0r" id="IRW-P3-wkC"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="add" id="XEg-J0-lDM">
@@ -256,11 +256,16 @@ Smör, salt och peppar</string>
                         <viewLayoutGuide key="safeArea" id="Lgw-rA-onf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="0Vr-ZO-66M">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1Px-99-yWm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1Px-99-yWm">
+                            <connections>
+                                <action selector="editBtnPressed:" destination="hqs-8H-d3B" id="oUG-h1-Y3w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="doThisLbl" destination="xhy-2p-stv" id="ChA-I8-Ybf"/>
                         <outlet property="ingredientsLbl" destination="L5C-hT-Wcw" id="H8T-Hp-K4h"/>
+                        <outlet property="recipeImg" destination="i56-Qi-bW2" id="ZRI-Pq-r4l"/>
                         <outlet property="timeLbl" destination="Rth-RT-oes" id="VIV-Hr-pDa"/>
                         <outlet property="titleBar" destination="0Vr-ZO-66M" id="bjJ-tH-24I"/>
                     </connections>

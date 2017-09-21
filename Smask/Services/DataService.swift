@@ -44,21 +44,20 @@ class DataService {
 
 // Remove data from Firebase (Data and Images)
 func removeDataFromFIR(key : String) {
+    
+    // Remove recipe from
     FIR_REF_CATEGORIES.child("allRecipes").child(key).setValue(nil)
     
+    // Loop through all categories to be sure to delete reciepe everywhere
     for (_, element) in CATEGORIES.enumerated() {
         FIR_REF_CATEGORIES.child(element).child(key).setValue(nil)
     }
     
     let recipeImageRef = FIR_STORAGE_REF.child("\(USER_ID ?? "NO_USER")/\(key).jpg")
     
-    // Delete the file
+    // Delete the image from storage
     recipeImageRef.delete { error in
-        if let error = error {
-            // Uh-oh, an error occurred!
-        } else {
-            // File deleted successfully
-        }
+        if error != nil {   } else {   }
     }
 }
 
@@ -99,6 +98,7 @@ func addDataToFIR(title: String, favourite: Bool, time: Int, howTo: String, ingr
         "time": newRecipe.time,
         "title": newRecipe.title,
         "icon": newRecipe.icon,
+        "key": tempKey
         ]
     
     // Post the recipe data object to Firebase

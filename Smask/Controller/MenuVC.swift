@@ -34,7 +34,6 @@ class MenuVC: UIViewController {
         categoryChoice(category: "allRecipes")
     }
     
-    
 }
 
 extension MenuVC: UITableViewDelegate, UITableViewDataSource {

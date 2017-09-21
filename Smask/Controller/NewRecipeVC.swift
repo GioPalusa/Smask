@@ -112,10 +112,6 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
             addDataToFIR(title: titleTxt.text!, favourite: false, time: minutesFromSlider, howTo: howToTxt.text, ingredients: ingredientsTxt.text, icon: CATEGORY_IMAGES[selectedCategory]!, category: selectedCategory, image: recipeImg.image!)
             self.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "unwindToStart", sender: self)
-            
-            // Send image to FIR Storage
-            
-            
         }
     }
     

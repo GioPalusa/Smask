@@ -24,7 +24,7 @@ class RecipeListVC: UIViewController {
         super.viewDidLoad()
         
         // Store a local copy of FIR DB on the unit
-        Database.database().isPersistenceEnabled = false
+        Database.database().isPersistenceEnabled = true
         
         // Open up the sidebar menu using revealViewController
 //        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
@@ -58,12 +58,11 @@ class RecipeListVC: UIViewController {
         self.navigationItem.titleView = imageView
         
     }
-    
+
 // IB Actions
-    @IBAction func unwindToStart(segue: UIStoryboardSegue) {}
-    
     @IBAction func burgerBtnPressed(_ sender: Any) {
-        // WHAT TO DO?!
+        self.revealViewController().revealToggle(animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     
@@ -117,7 +116,8 @@ extension RecipeListVC: UITableViewDelegate, UITableViewDataSource {
     // Deletes from all categories
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let rowKey = recipesArray[indexPath.row].key
-        removeDataFromFIR(key: rowKey)
+        let result = removeDataFromFIR(key: rowKey)
+        print(result)
         refreshTableView()
     }
     

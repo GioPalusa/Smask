@@ -12,10 +12,10 @@ import UIKit
 class RecipeVC: UIViewController {
     
     @IBOutlet weak var titleBar: UINavigationItem!
-    @IBOutlet weak var favouriteBtn: UIButton!
     @IBOutlet weak var ingredientsLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var doThisLbl: UILabel!
+    @IBOutlet weak var recipeImg: UIImageView!
     
     var chosenRecipe: Recipe!
 
@@ -25,13 +25,22 @@ class RecipeVC: UIViewController {
         ingredientsLbl.text = chosenRecipe.ingredients
         doThisLbl.text = chosenRecipe.howTo
         timeLbl.text = "\(chosenRecipe.time) minuter"
+        
+        // Get image from Firebase
+        let reference = FIR_STORAGE_REF.child("\(USER_ID ?? "NO_USER")/\(chosenRecipe.key).jpg")
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        reference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+            } else {
+                // Data for "images/island.jpg" is returned
+                self.recipeImg.image = UIImage(data: data!)
+            }
         }
-    
-   
-
-    @IBAction func backBtnPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func editBtnPressed(_ sender: Any) {
+        
+    }
 }
