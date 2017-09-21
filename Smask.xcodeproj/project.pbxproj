@@ -12,9 +12,12 @@
 		AC17FFB01F6B051D0061891A /* NewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC17FFAF1F6B051D0061891A /* NewRecipeVC.swift */; };
 		AC28AFC51F67264D0014066B /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28AFC41F67264D0014066B /* RecipeVC.swift */; };
 		AC4C96DA1F6EABBD00B5CA8D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C96D91F6EABBD00B5CA8D /* DataService.swift */; };
+		AC4C96DC1F6EAC1700B5CA8D /* imageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C96DB1F6EAC1700B5CA8D /* imageService.swift */; };
 		AC5ED3CF1F67F98500996293 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3CE1F67F98500996293 /* Recipe.swift */; };
 		AC5ED3D61F68140B00996293 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ED3D51F68140B00996293 /* Constants.swift */; };
 		AC7BA6111F6BE07300B413C4 /* CategoryMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BA6101F6BE07300B413C4 /* CategoryMenuCell.swift */; };
+		AC910F1F1F728808008F45DE /* Pods-Smask.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 41AA2E03EAF296F095157EED /* Pods-Smask.debug.xcconfig */; };
+		AC910F201F72880B008F45DE /* Pods-Smask.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BDF30456176C577F37BC796C /* Pods-Smask.release.xcconfig */; };
 		ACAD77221F65990B00DF4B7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACAD77211F65957F00DF4B7E /* GoogleService-Info.plist */; };
 		ACAFA91A1F6DE3C100D11C3F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAFA9191F6DE3C100D11C3F /* SettingsVC.swift */; };
 		ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC25F2E1F62D1D90088CF12 /* AppDelegate.swift */; };
@@ -33,6 +36,7 @@
 		AC17FFAF1F6B051D0061891A /* NewRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeVC.swift; sourceTree = "<group>"; };
 		AC28AFC41F67264D0014066B /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
 		AC4C96D91F6EABBD00B5CA8D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		AC4C96DB1F6EAC1700B5CA8D /* imageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageService.swift; sourceTree = "<group>"; };
 		AC5ED3CE1F67F98500996293 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		AC5ED3D01F680B6C00996293 /* Smask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smask-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC5ED3D11F680B6C00996293 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				AC4C96D91F6EABBD00B5CA8D /* DataService.swift */,
+				AC4C96DB1F6EAC1700B5CA8D /* imageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -242,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC25F391F62D1D90088CF12 /* LaunchScreen.storyboard in Resources */,
+				AC910F201F72880B008F45DE /* Pods-Smask.release.xcconfig in Resources */,
 				ACAD77221F65990B00DF4B7E /* GoogleService-Info.plist in Resources */,
+				AC910F1F1F728808008F45DE /* Pods-Smask.debug.xcconfig in Resources */,
 				ACC25F361F62D1D90088CF12 /* Assets.xcassets in Resources */,
 				ACC25F341F62D1D90088CF12 /* Main.storyboard in Resources */,
 			);
@@ -327,6 +334,7 @@
 				ACAFA91A1F6DE3C100D11C3F /* SettingsVC.swift in Sources */,
 				ACD148EE1F642F0C007265F2 /* MenuVC.swift in Sources */,
 				AC12954B1F6957280062F1FF /* MainPageRecipeCell.swift in Sources */,
+				AC4C96DC1F6EAC1700B5CA8D /* imageService.swift in Sources */,
 				ACC25F2F1F62D1D90088CF12 /* AppDelegate.swift in Sources */,
 				AC5ED3D61F68140B00996293 /* Constants.swift in Sources */,
 				AC28AFC51F67264D0014066B /* RecipeVC.swift in Sources */,

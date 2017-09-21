@@ -34,7 +34,7 @@ class DataService {
                 let ingredients = recipe.childSnapshot(forPath: "ingredients").value as! String
                 let time = recipe.childSnapshot(forPath: "time").value as! Int
                 let icon = recipe.childSnapshot(forPath: "icon").value as! String
-                let recipeObject = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon, key: key)
+                let recipeObject = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon, key: key, img: "")
                 recipesArray.append(recipeObject)
             }
             handler(recipesArray)
@@ -42,15 +42,66 @@ class DataService {
     }
 }
 
-func addDataToFIR(title: String, favourite: Bool, time: Int, howTo: String, ingredients: String, icon: String, category: String) {
+// Remove data from Firebase (Data and Images)
+func removeDataFromFIR(key : String) {
+    FIR_REF_CATEGORIES.child("allRecipes").child(key).setValue(nil)
+    
+    for (_, element) in CATEGORIES.enumerated() {
+        FIR_REF_CATEGORIES.child(element).child(key).setValue(nil)
+    }
+    
+    let recipeImageRef = FIR_STORAGE_REF.child("\(USER_ID ?? "NO_USER")/\(key).jpg")
+    
+    // Delete the file
+    recipeImageRef.delete { error in
+        if let error = error {
+            // Uh-oh, an error occurred!
+        } else {
+            // File deleted successfully
+        }
+    }
+}
+
+// Add data to Firebase (Data and Images)
+func addDataToFIR(title: String, favourite: Bool, time: Int, howTo: String, ingredients: String, icon: String, category: String, image: UIImage) {
     
     // Create random key
     let tempKey = FIR_REF.childByAutoId().key
     
-    let newRecipe = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon, key: tempKey)
-    let object : [String : Any] = ["favourite": newRecipe.favourite, "howTo": newRecipe.howTo, "ingredients": newRecipe.ingredients, "time": newRecipe.time, "title": newRecipe.title, "icon": newRecipe.icon]
+    // Create a new Recipe object
+    let newRecipe = Recipe(title: title, favourite: favourite, time: time, howto: howTo, ingredients: ingredients, icon: icon, key: tempKey, img: "")
     
-    // Post recieved data
+    // Post image to Firebase Storage
+    var imageURL: Any?
+    
+    let recipeImageRef = FIR_STORAGE_REF.child("\(USER_ID ?? "NO_USER")/\(tempKey).jpg")
+    
+    if let uploadImage = UIImageJPEGRepresentation(image, 0.1) {
+        recipeImageRef.putData(uploadImage, metadata: nil, completion: {(metadata, error) in
+            if error != nil {
+                print("Error image upload")
+            } else {
+                imageURL = metadata?.downloadURL()?.absoluteString
+                _ = FIR_REF_CATEGORIES.child(category).child(tempKey).child("url").setValue(imageURL)
+                _ = FIR_REF_CATEGORIES.child("allRecipes").child(tempKey).child("url").setValue(imageURL)
+                if time <= 15 {
+                    _ = FIR_REF_CATEGORIES.child(category).child(tempKey).child("url").setValue(imageURL)
+                }
+            }
+        })
+    }
+    
+    // Prepare object to send to Firebase
+    let object : [String : Any] = [
+        "favourite": newRecipe.favourite,
+        "howTo": newRecipe.howTo,
+        "ingredients": newRecipe.ingredients,
+        "time": newRecipe.time,
+        "title": newRecipe.title,
+        "icon": newRecipe.icon,
+        ]
+    
+    // Post the recipe data object to Firebase
     _ = FIR_REF_CATEGORIES.child(category).child(tempKey).setValue(object)
     _ = FIR_REF_CATEGORIES.child("allRecipes").child(tempKey).setValue(object)
     

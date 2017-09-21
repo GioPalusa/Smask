@@ -17,8 +17,9 @@ class Recipe {
     private var _howTo: String
     private var _icon: String
     private var _key: String
+    private var _img: String
     
-    init(title: String, favourite: Bool, time: Int, howto: String, ingredients: String, icon: String, key: String) {
+    init(title: String, favourite: Bool, time: Int, howto: String, ingredients: String, icon: String, key: String, img: String) {
         self._title = title
         self._favourite = favourite
         self._time = time
@@ -26,6 +27,7 @@ class Recipe {
         self._ingredients = ingredients
         self._icon = icon
         self._key = key
+        self._img = img
     }
     
     var title : String {
@@ -54,5 +56,9 @@ class Recipe {
     
     var key : String {
         return _key
+    }
+    
+    var img : String {
+        return _img
     }
 }

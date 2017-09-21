@@ -34,6 +34,7 @@ class RecipeListVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        // Set the delegate and dataSource to this VC
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -113,11 +114,10 @@ extension RecipeListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     // Slide to delete entry from the table
-    // Deletes from active category, all recipes and "under 15 minutes"
+    // Deletes from all categories
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        FIR_REF_CATEGORIES.child("allRecipes").child(recipesArray[indexPath.row].key).setValue(nil)
-        FIR_REF_CATEGORIES.child("Under 15 minuter").child(recipesArray[indexPath.row].key).setValue(nil)
-        FIR_REF_CATEGORIES.child(chosenCategory).child(recipesArray[indexPath.row].key).setValue(nil)
+        let rowKey = recipesArray[indexPath.row].key
+        removeDataFromFIR(key: rowKey)
         refreshTableView()
     }
     

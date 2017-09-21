@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 // Recepie categories
-let CATEGORIES : [String] = ["Under 15 minuter", "Asiatiskt", "Pasta", "Snabbmat", "Kött", "Fisk", "Fika", "Frukost", "Vegetariskt", "Grillat"]
+let CATEGORIES : [String] = ["Under 15 minuter", "Asiatiskt", "Pasta", "Snabbmat", "Kött", "Fisk", "Fika", "Frukost", "Vegetariskt", "Grillat", "Drinkar"]
 
 let CATEGORY_IMAGES: [String : String] = [
     "Under 15 minuter" : "micro",
@@ -23,7 +23,8 @@ let CATEGORY_IMAGES: [String : String] = [
     "Vegetariskt" : "vego",
     "Grillat" : "barbeque",
     "Fisk" : "fish",
-    "Kött" : "meat"
+    "Kött" : "meat",
+    "Drinkar" : "drink"
 ]
 
 // User data
@@ -36,4 +37,6 @@ let FIR_PATH_CATEGORIES = "categories"
 let FIR_REF : DatabaseReference! = Database.database().reference()
 let FIR_REF_USER = FIR_REF.child(FIR_PATH_USERS).child(USER_ID!)
 let FIR_REF_CATEGORIES = FIR_REF.child(FIR_PATH_USERS).child(USER_ID!).child(FIR_PATH_CATEGORIES)
+let FIR_STORAGE = Storage.storage()
+let FIR_STORAGE_REF = Storage.storage().reference()
 

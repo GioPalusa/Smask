@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         Auth.auth().signInAnonymously() { (user, error) in
-            let isAnonymous = user!.isAnonymous  // true
-            let uid = user!.uid
+            _ = user!.isAnonymous  // true
+            _ = user!.uid
         }
         return true
     }

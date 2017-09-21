@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate ,UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -20,18 +21,18 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     @IBOutlet weak var recipeImg: UIImageView!
     @IBOutlet weak var pickImageBtnsStack: UIStackView!
     @IBOutlet weak var changeImgBtn: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
-    
-// Class variables
+    // Class variables
     var selectedCategory: String = CATEGORIES[0]
     var minutesFromSlider: Int = 15
+    let imagePicker = UIImagePickerController()
     
-// View
+    // View
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Hide
-        
+        // Set up the picker view
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
             return CATEGORIES.count
         }
@@ -44,36 +45,40 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         self.categoryPcr.dataSource = self;
         self.categoryPcr.delegate = self;
         
-        // Hide unnecessary objects at start
+        // Hide inactive objects at start
         recipeImg.isHidden = true
         changeImgBtn.isHidden = true
+        
+        // Observer to move the scroll view up when keyboard is visible
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
     
     
-// IBActions
+    // IBActions
     
     // Image picker
     @IBAction func pickImageBtnPressed(_ sender: Any) {
-        let image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        image.allowsEditing = false
-        self.present(image, animated: true) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true) {
             // after this is completed
         }
     }
     
     // Camera image picker
     @IBAction func TakeImageBtnPressed(_ sender: Any) {
-        let image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.camera
-        image.allowsEditing = false
-        self.present(image, animated: true) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true) {
             // after this is completed
         }
     }
     
+    // If the button "change image" is pressed, show the selections for camera and library
     @IBAction func changeImgBtnPressed(_ sender: Any) {
         changeImgBtn.isHidden = true
         pickImageBtnsStack.isHidden = false
@@ -82,13 +87,35 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     // Slider for choosing amount of minutes
     @IBAction func sliderChanged(sender: UISlider) {
         totalMinutesLbl.text = "\(Int(sender.value)) minuter"
-        // String.localizedStringWithFormat(NSLocalizedString("%@ minutes", comment: "number of minutes from the slider"), Int(sender.value))
+        
         minutesFromSlider = Int(sender.value)
         
         if minutesFromSlider <= 15 {
             autoAddTxtLbl.isHidden = false
         } else {
             autoAddTxtLbl.isHidden = true
+        }
+    }
+        
+    // Send everything to the database
+    // If text fields are empty - prompt to user
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        
+        if titleTxt.text == "" || howToTxt.text == "" || ingredientsTxt.text == "" {
+            let alertController = UIAlertController(title: NSLocalizedString("Something is missing", comment: "title for alert popup saying something is wrong"), message:
+                NSLocalizedString("Check all fields and try again", comment: "Message in alert popup for a new recipe"), preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: NSLocalizedString("Okay!", comment: ""), style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            // Send data to FIR Database
+            addDataToFIR(title: titleTxt.text!, favourite: false, time: minutesFromSlider, howTo: howToTxt.text, ingredients: ingredientsTxt.text, icon: CATEGORY_IMAGES[selectedCategory]!, category: selectedCategory, image: recipeImg.image!)
+            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "unwindToStart", sender: self)
+            
+            // Send image to FIR Storage
+            
+            
         }
     }
     
@@ -118,24 +145,6 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         view.endEditing(true)
     }
     
-    // Send everything to the database
-    // If text fields are empty - prompt to user
-    @IBAction func saveBtnPressed(_ sender: Any) {
-        
-        if titleTxt.text == "" || howToTxt.text == "" || ingredientsTxt.text == "" {
-            let alertController = UIAlertController(title: NSLocalizedString("Something is missing", comment: "title for alert popup saying something is wrong"), message:
-                NSLocalizedString("Check all fields and try again", comment: "Message in alert popup for a new recipe"), preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: NSLocalizedString("Okay!", comment: ""), style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-        } else {
-            addDataToFIR(title: titleTxt.text!, favourite: false, time: minutesFromSlider, howTo: howToTxt.text, ingredients: ingredientsTxt.text, icon: CATEGORY_IMAGES[selectedCategory]!, category: selectedCategory)
-            self.dismiss(animated: true, completion: nil)
-            self.performSegue(withIdentifier: "unwindToStart", sender: self)
-
-        }
-    }
-    
     // Show the recipe categories in picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -151,6 +160,23 @@ class NewRecipeVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCategory = String(CATEGORIES.sorted()[row])
+    }
+    
+    @objc func keyboardWillHide(noti: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillShow(noti: Notification) {
+        
+        guard let userInfo = noti.userInfo else { return }
+        guard var keyboardFrame: CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
     }
     
 }
