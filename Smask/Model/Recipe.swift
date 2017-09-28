@@ -10,55 +10,23 @@ import Foundation
 
 class Recipe {
     
-    private var _title: String
-    private var _favourite: Bool
-    private var _time: Int
-    private var _ingredients: String
-    private var _howTo: String
-    private var _icon: String
-    private var _key: String
-    private var _img: String
+    public private(set) var title: String
+    public private(set) var favourite: Bool
+    public private(set) var time: Int
+    public private(set) var ingredients: String
+    public private(set) var howTo: String
+    public private(set) var icon: String
+    public private(set) var key: String
+    public private(set) var img: String
     
     init(title: String, favourite: Bool, time: Int, howto: String, ingredients: String, icon: String, key: String, img: String) {
-        self._title = title
-        self._favourite = favourite
-        self._time = time
-        self._howTo = howto
-        self._ingredients = ingredients
-        self._icon = icon
-        self._key = key
-        self._img = img
-    }
-    
-    var title : String {
-        return _title
-    }
-    
-    var favourite : Bool {
-        return _favourite
-    }
-    
-    var time : Int {
-        return _time
-    }
-    
-    var howTo : String {
-        return _howTo
-    }
-    
-    var ingredients : String {
-        return _ingredients
-    }
-    
-    var icon : String {
-        return _icon
-    }
-    
-    var key : String {
-        return _key
-    }
-    
-    var img : String {
-        return _img
+        self.title = title
+        self.favourite = favourite
+        self.time = time
+        self.howTo = howto
+        self.ingredients = ingredients
+        self.icon = icon
+        self.key = key
+        self.img = img
     }
 }
